@@ -1,16 +1,15 @@
 public class Numero
 {
-    public static String Fibonacci(int N) {
-        //0, 1, 1, 2, 3, ...
+    public static String Fibonacci(int n) {
 
         int a = 0, b = 1;
         String resultado = "";
 
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < n; i++)
         {
             resultado = resultado + a;
-            if (i<N - 1){
-                resultado = resultado + ", "; // Agregar coma excepto en el último número
+            if (i<n - 1){
+                resultado = resultado + ", ";
             }
             int temp = a + b;
             a = b;
@@ -19,19 +18,19 @@ public class Numero
         return resultado;
     }
 
-    public static String Primos(int N) {
+    public static String Primos(int n) {
         String resultado = "";
 
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i <= n; i++) {
             int contador = 0;
 
             for (int j = 1; j <= i; j++) {
                 if (i % j == 0) {
-                    contador++; // Contar cuántos divisores tiene i
+                    contador++;
                 }
             }
 
-            if (contador == 2) { // Será primo si tiene exactamente 2 divisores (1 y él mismo)
+            if (contador == 2) {
                 if (!resultado.equals("")) {
                     resultado = resultado + ", ";
                 }
@@ -41,65 +40,65 @@ public class Numero
         return resultado;
     }
 
-    public static String Invertir(int N) {
+    public static String Invertir(int n) {
         String resultado = "";
 
-        while (N > 0) {
-            int digito = N % 10; // Obtener el último dígito
-            resultado = resultado + digito; // Concatenarlo al resultado
-            N = N / 10; // Eliminar el último dígito
+        while (n > 0) {
+            int digito = n % 10;
+            resultado = resultado + digito;
+            n = n / 10;
         }
         return resultado;
     }
 
-    public static int MCD(int A, int B) {
+    public static int MCD(int a, int B) {
         while (B != 0) {
             int temp = B;
-            B = A % B; // Residuo de la división
-            A = temp;
+            B = a % B;
+            a = temp;
         }
-        return A;
+        return a;
     }
 
-    public static String DecimalABinario(int N) {
+    public static String DecimalaBinario(int n) {
         String resultado = "";
 
-        while (N > 0) {
-            int residuo = N % 2; // Obtener el bit menos significativo
-            resultado = residuo + resultado; // Agregarlo al inicio del resultado
-            N = N / 2; // Dividir por 2
+        while (n > 0) {
+            int residuo = n % 2; 
+            resultado = residuo + resultado;
+            n = n / 2; 
         }
 
         if (resultado.equals("")) {
-            resultado = "0"; // Manejo especial para N = 0
+            resultado = "0"; 
         }
 
         return resultado;
     }
 
-    public static int SumaCuadrados(int N) {
+    public static int SumaCuadrados(int n) {
         int resultado = 0;
 
-        for (int i = 1; i <= N; i++) {
-            resultado = resultado + (i * i); // Sumar el cuadrado de i
+        for (int i = 1; i <= n; i++) {
+            resultado = resultado + (i * i); 
         }
 
         return resultado;
     }
 
-    public static String NumerosPerfectos(int N) {
+    public static String numerosPerfectos(int n) {
         String resultado = "";
 
-        for (int i = 1; i <= N; i++) {
+        for (int i = 1; i <= n; i++) {
             int suma = 0;
 
             for (int j = 1; j < i; j++) {
                 if (i % j == 0) {
-                    suma = suma + j; // Sumar los divisores propios de i
+                    suma = suma + j; 
                 }
             }
 
-            if (suma == i) { // Si la suma de divisores es igual al número, es perfecto
+            if (suma == i) { 
                 if (!resultado.equals("")) {
                     resultado = resultado + ", ";
                 }
